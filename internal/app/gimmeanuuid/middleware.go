@@ -1,4 +1,4 @@
-package dailyguid
+package gimmeanuuid
 
 import (
 	"errors"
@@ -6,8 +6,8 @@ import (
 	"time"
 
 	jww "github.com/spf13/jwalterweatherman"
-	"github.com/spitzfaust/daily-guid/internal/pkg/contexts"
-	"github.com/spitzfaust/daily-guid/internal/pkg/logging"
+	"github.com/spitzfaust/gimme-an-uuid/internal/pkg/contexts"
+	"github.com/spitzfaust/gimme-an-uuid/internal/pkg/logging"
 )
 
 // setRequestIDMiddleware sets the id value in the context of the request.

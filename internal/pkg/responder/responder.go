@@ -8,6 +8,6 @@ import (
 
 // Responder is used to write different MIME types to a http response.
 type Responder interface {
-	WriteResponse(guid uuid.UUID, w *http.ResponseWriter) error
+	WriteResponse(uuid uuid.UUID, w *http.ResponseWriter) error
 	ContentType() string
 }

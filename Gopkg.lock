@@ -2,6 +2,12 @@
 
 
 [[projects]]
+  name = "github.com/julienschmidt/httprouter"
+  packages = ["."]
+  revision = "8c199fb6259ffc1af525cc3ad52ee60ba8359669"
+  version = "v1.1"
+
+[[projects]]
   branch = "master"
   name = "github.com/justinas/alice"
   packages = ["."]
@@ -37,7 +43,12 @@
 [[projects]]
   branch = "master"
   name = "golang.org/x/image"
-  packages = ["math/fixed"]
+  packages = [
+    "font",
+    "font/basicfont",
+    "font/plan9font",
+    "math/fixed"
+  ]
   revision = "f315e440302883054d0c2bd85486878cb4f8572c"
 
 [[projects]]
@@ -56,6 +67,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "5de4f6b952c4ac65f95ca94afd6f533c404d4e47d63d3b302706d06959be45ba"
+  inputs-digest = "178a0765e9e2d86adc4f859851d5f2d98fbb23e1b80431ef9ab92c5a72e42f95"
   solver-name = "gps-cdcl"
   solver-version = 1

@@ -13,7 +13,7 @@ func (responder textPlainResponder) ContentType() string {
 	return "text/plain"
 }
 
-func (responder textPlainResponder) WriteResponse(guid uuid.UUID, w *http.ResponseWriter) error {
-	fmt.Fprint(*w, guid.String())
+func (responder textPlainResponder) WriteResponse(uuid uuid.UUID, w *http.ResponseWriter) error {
+	fmt.Fprint(*w, uuid.String())
 	return nil
 }

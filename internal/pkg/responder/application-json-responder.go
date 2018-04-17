@@ -12,15 +12,15 @@ import (
 type applicationJSONResponder struct{}
 
 type jsonResponse struct {
-	GUID string `json:"guid"`
+	UUID string `json:"uuid"`
 }
 
 func (responder applicationJSONResponder) ContentType() string {
 	return "application/json"
 }
 
-func (responder applicationJSONResponder) WriteResponse(guid uuid.UUID, w *http.ResponseWriter) error {
-	j := jsonResponse{GUID: guid.String()}
+func (responder applicationJSONResponder) WriteResponse(uuid uuid.UUID, w *http.ResponseWriter) error {
+	j := jsonResponse{UUID: uuid.String()}
 	raw, err := json.Marshal(j)
 	if err != nil {
 		return err

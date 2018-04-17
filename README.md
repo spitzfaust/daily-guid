@@ -1,1 +1,1 @@
-# daily-guid
+# gimme an uuid

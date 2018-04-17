@@ -11,12 +11,12 @@ import (
 	"golang.org/x/image/math/fixed"
 )
 
-// GenerateGUIDImage generates an image with the given guid written onto it.
-func GenerateGUIDImage(guid uuid.UUID) *image.RGBA {
+// GenerateUUIDImage generates an image with the given uuid written onto it.
+func GenerateUUIDImage(uuid uuid.UUID) *image.RGBA {
 	img := image.NewRGBA(image.Rect(0, 0, 260, 50))
 	blue := color.RGBA{0, 0, 0, 255}
 	draw.Draw(img, img.Bounds(), &image.Uniform{blue}, image.ZP, draw.Src)
-	addLabel(img, 5, 25, guid.String())
+	addLabel(img, 5, 25, uuid.String())
 	return img
 }
 

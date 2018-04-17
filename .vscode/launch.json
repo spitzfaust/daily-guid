@@ -9,7 +9,7 @@
             "type": "go",
             "request": "launch",
             "mode": "debug",
-            "program": "${workspaceRoot}/cmd/dailyguid/main.go"
+            "program": "${workspaceRoot}/cmd/gimmeanuuid/main.go"
         },
         {
             "name": "Launch",

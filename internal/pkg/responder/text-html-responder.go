@@ -14,15 +14,17 @@ func (responder textHTMLResponder) ContentType() string {
 }
 
 type htmlResponse struct {
-	GUID string
+	UUID    string
+	Version int
 }
 
-func (responder textHTMLResponder) WriteResponse(guid uuid.UUID, w *http.ResponseWriter) error {
-	tmpl, err := template.New("daily-guid").Parse(htmlTemplate)
+func (responder textHTMLResponder) WriteResponse(uuid uuid.UUID, w *http.ResponseWriter) error {
+	tmpl, err := template.New("gimmeanuuid").Parse(htmlTemplate)
 	if err != nil {
 		return err
 	}
-	tmpl.Execute(*w, htmlResponse{GUID: guid.String()})
+
+	tmpl.Execute(*w, htmlResponse{UUID: uuid.String(), Version: int(uuid.Version())})
 	return nil
 }
 
@@ -33,7 +35,7 @@ const htmlTemplate = `
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>daily-guid</title>
+    <title>gimme an uuid {{ .Version }}</title>
     <style>
         * {
             box-sizing: border-box;
@@ -62,7 +64,7 @@ const htmlTemplate = `
 
 <body>
     <main>
-        <h1>{{ .GUID }}</h1>
+        <h1>{{ .UUID }}</h1>
     </main>
 </body>
 

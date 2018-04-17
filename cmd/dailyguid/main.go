@@ -4,13 +4,13 @@ import (
 	"flag"
 
 	jww "github.com/spf13/jwalterweatherman"
-	"github.com/spitzfaust/daily-guid/internal/app/dailyguid"
+	"github.com/spitzfaust/gimme-an-uuid/internal/app/gimmeanuuid"
 )
 
 // ProgramName is the program name.
-const ProgramName = "daily-guid"
+const ProgramName = "gimme an uuid"
 
 func main() {
 	port := flag.String("p", "9999", "port to serve on")
-	dailyguid.Run(ProgramName, *port, jww.LevelInfo)
+	gimmeanuuid.Run(ProgramName, *port, jww.LevelInfo)
 }
