@@ -5,7 +5,7 @@ import (
 	"net/http"
 
 	uuid "github.com/satori/go.uuid"
-	"github.com/spitzfaust/gimme-an-uuid/internal/pkg/image"
+	"github.com/spitzfaust/gimme-an-uuid/internal/pkg/imagegen"
 )
 
 type imagePNGResponder struct {
@@ -16,7 +16,7 @@ func (responder imagePNGResponder) ContentType() string {
 }
 
 func (responder imagePNGResponder) WriteResponse(uuid uuid.UUID, w *http.ResponseWriter) error {
-	img := image.GenerateUUIDImage(uuid)
+	img := imagegen.GenerateUUIDImage(uuid)
 	err := png.Encode(*w, img)
 	if err != nil {
 		return err

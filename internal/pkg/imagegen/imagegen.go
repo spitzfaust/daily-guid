@@ -1,4 +1,4 @@
-package image
+package imagegen
 
 import (
 	"image"

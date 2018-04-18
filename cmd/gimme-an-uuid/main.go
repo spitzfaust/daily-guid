@@ -8,9 +8,10 @@ import (
 )
 
 // ProgramName is the program name.
-const ProgramName = "gimme an uuid"
+const ProgramName = "gimme-an-uuid"
 
 func main() {
 	port := flag.String("p", "9999", "port to serve on")
+	flag.Parse()
 	gimmeanuuid.Run(ProgramName, *port, jww.LevelInfo)
 }

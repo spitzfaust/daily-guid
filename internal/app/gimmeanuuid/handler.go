@@ -1,6 +1,7 @@
 package gimmeanuuid
 
 import (
+	"fmt"
 	"net/http"
 	"strings"
 
@@ -15,7 +16,7 @@ import (
 )
 
 func index(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
-
+	fmt.Fprint(w, "gimme-an-uuid")
 }
 
 func extractNamespace(ps httprouter.Params) (*uuid.UUID, error) {

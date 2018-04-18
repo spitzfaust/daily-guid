@@ -5,7 +5,7 @@ import (
 	"net/http"
 
 	uuid "github.com/satori/go.uuid"
-	"github.com/spitzfaust/gimme-an-uuid/internal/pkg/image"
+	"github.com/spitzfaust/gimme-an-uuid/internal/pkg/imagegen"
 )
 
 type imageGIFResponder struct {
@@ -16,7 +16,7 @@ func (responder imageGIFResponder) ContentType() string {
 }
 
 func (responder imageGIFResponder) WriteResponse(uuid uuid.UUID, w *http.ResponseWriter) error {
-	img := image.GenerateUUIDImage(uuid)
+	img := imagegen.GenerateUUIDImage(uuid)
 	err := gif.Encode(*w, img, &gif.Options{NumColors: 256})
 	if err != nil {
 		return err
