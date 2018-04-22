@@ -21,6 +21,8 @@ func (fac factory) Create(mimeType string) Responder {
 		return textHTMLResponder{}
 	case "text/plain":
 		return textPlainResponder{}
+	case "*/*":
+		return textPlainResponder{}
 	default:
 		return nil
 	}
